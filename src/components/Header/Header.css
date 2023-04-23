@@ -7,11 +7,14 @@
   padding-left: 100px;
   padding-right: 100px;
 }
-.header div a{
-    text-decoration: none;
-    color: white;
-    margin-left: 33px;
+.header div a {
+  text-decoration: none;
+  color: white;
+  margin-left: 33px;
 }
-.header div a:hover{
-    color: aqua;
+.header div a:hover {
+  color: aqua;
+}
+.text-white {
+  color: white;
 }

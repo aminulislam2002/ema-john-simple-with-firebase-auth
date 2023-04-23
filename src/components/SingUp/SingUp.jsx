@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./SingUp.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const SingUp = () => {
   const [error, setError] = useState(" ");
+
+  const { createUser } = useContext(AuthContext);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +24,18 @@ const SingUp = () => {
       setError("password must be 6 characters or longer");
       return;
     }
+
+    setError(" ");
+    createUser(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.rest()
+      })
+      .catch((error) => {
+        console.log(error);
+        setError(error.message);
+      });
   };
 
   return (
