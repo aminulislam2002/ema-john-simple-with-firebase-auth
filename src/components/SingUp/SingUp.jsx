@@ -30,7 +30,7 @@ const SingUp = () => {
       .then((result) => {
         const loggedUser = result.user;
         console.log(loggedUser);
-        form.rest()
+        form.reset()
       })
       .catch((error) => {
         console.log(error);
